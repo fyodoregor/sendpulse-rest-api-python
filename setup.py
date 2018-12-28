@@ -13,7 +13,7 @@ if version_info.major == 2:
     install_requires = ['python-memcached', ]
 
 setup(
-    name='mysendpulse',
+    name='pysendpulse',
     version=__version__,
     packages=find_packages(),
     description='A simple SendPulse REST client library and example for Python',
