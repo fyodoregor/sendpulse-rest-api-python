@@ -19,6 +19,6 @@ setup(
     description='A simple SendPulse REST client library and example for Python',
     author=__author__,
     author_email=__author_email__,
-    url='https://github.com/sendpulse/sendpulse-rest-api-python',
+    url='https://github.com/fyodoregor/sendpulse-rest-api-python',
     install_requires=install_requires
 )
