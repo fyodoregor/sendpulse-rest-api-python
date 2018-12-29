@@ -321,21 +321,21 @@ class PySendPulse:
             return self.__handle_error("Emails list can't be converted by JSON library")
         return self.__handle_result(self.__send_request('addressbooks/{}/emails'.format(id), 'DELETE', {'emails': emails}))
 
-    def get_emails_stat_by_campaigns(self, campaign, emails):
+    def get_emails_stat_by_campaigns(self, campaign, email):
         """ Get campaigns statistic for list of emails
 
         @param emails: list of emails ['test_1@test_1.com', ..., 'test_n@test_n.com']
         @return: dictionary with response message
         """
         logging.info("Function call: get_emails_stat_by_campaigns")
-        if not emails:
+        if not email:
             self.__handle_error("Empty emails")
-        try:
+        """try:
             emails = json.dumps(emails)
         except:
             logging.debug("Emails: {}".format(emails))
-            return self.__handle_error("Emails list can't be converted by JSON library")
-        return self.__handle_result(self.__send_request('campaigns/{}/emails'.format(campaign), 'GET', {'emails': emails})
+            return self.__handle_error("Emails list can't be converted by JSON library")"""
+        return self.__handle_result(self.__send_request('campaigns/{}/email/{}'.format(campaign, email), 'GET')
 
     # ------------------------------------------------------------------ #
     #                        EMAIL  CAMPAIGNS                            #
