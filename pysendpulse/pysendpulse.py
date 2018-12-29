@@ -485,7 +485,7 @@ class PySendPulse:
     #                              EMAILS                                #
     # ------------------------------------------------------------------ #
 
-    def get_email_info_from_one_addressbooks_DEL(self, id, email):
+    def get_email_info_from_one_addressbooks(self, id, email):
         """ Get information about email address from one addressbook
 
         @param id: unsigned int addressbook ID
