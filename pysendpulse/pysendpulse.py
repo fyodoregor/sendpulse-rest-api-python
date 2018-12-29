@@ -5,7 +5,6 @@ Documentation:
     https://login.sendpulse.com/manual/rest-api/
     https://sendpulse.com/api
 """
-
 import os
 import memcache
 import requests
@@ -322,7 +321,7 @@ class PySendPulse:
             return self.__handle_error("Emails list can't be converted by JSON library")
         return self.__handle_result(self.__send_request('addressbooks/{}/emails'.format(id), 'DELETE', {'emails': emails}))
 
-    def get_emails_stat_by_campaigns(self, campaign, email):
+    def get_emails_stat_by_campaigns(self, campaign, emails):
         """ Get campaigns statistic for list of emails
 
         @param emails: list of emails ['test_1@test_1.com', ..., 'test_n@test_n.com']
@@ -336,7 +335,7 @@ class PySendPulse:
         except:
             logging.debug("Emails: {}".format(emails))
             return self.__handle_error("Emails list can't be converted by JSON library")
-        return self.__handle_result(self.__send_request('campaigns/{}/emails/{}'.format(campaign, email), 'GET')
+        return self.__handle_result(self.__send_request('campaigns/{}/emails'.format(campaign), 'GET', {'emails': emails})
 
     # ------------------------------------------------------------------ #
     #                        EMAIL  CAMPAIGNS                            #
