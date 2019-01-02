@@ -328,13 +328,6 @@ class PySendPulse:
         @return: dictionary with response message
         """
         logging.info("Function call: get_emails_stat_by_campaigns")
-        if not email:
-            self.__handle_error("Empty emails")
-        """try:
-            emails = json.dumps(emails)
-        except:
-            logging.debug("Emails: {}".format(emails))
-            return self.__handle_error("Emails list can't be converted by JSON library")"""
         return self.__handle_result(self.__send_request('campaigns/{}/email/{}'.format(campaign, email), 'GET')
 
     # ------------------------------------------------------------------ #
