@@ -328,7 +328,7 @@ class PySendPulse:
         @return: dictionary with response message
         """
         logging.info("Function call: get_emails_stat_by_campaigns")
-        return self.__handle_result(self.__send_request('campaigns/{}/email/{}'.format(campaign, email), 'GET')
+        return self.__handle_result(self.__send_request(f'campaigns/{campaign}/email/{email}', 'GET')
 
     # ------------------------------------------------------------------ #
     #                        EMAIL  CAMPAIGNS                            #
